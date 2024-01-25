@@ -1,5 +1,7 @@
 This is a repo for guitar hero/clone hero guitar code.
 
+yes this is what me(mari) and ornej have been using 
+
 many people have asked for and complained about this code basically saying that its cheating blah blah blah.. i present this shitty code to you to show its not cheating and its not this magical game changing thing some of you believe it to be.
 anyways moving on to how to use this cause thats what you all want right?
 
