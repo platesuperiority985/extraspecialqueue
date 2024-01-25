@@ -5,7 +5,7 @@ anyways moving on to how to use this cause thats what you all want right?
 
 DISCLAIMER!!! 
 this is not a good tutorial cause i just cant be bothered but it should be good enough i think and if not just contact me i guess..
-
+discord: marikogh
 
 first things first you need yourself a arduinotar with either a pi pico or pro micro.
 now that weve got that we need to download the arduino ide software so we can upload the code to the guitar.
