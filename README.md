@@ -51,6 +51,8 @@ if you are on pro micro you will be stuck at 1000 but if you are on pi pico you 
 
 depending on the board it will be different so if you use pro micro this is easy and for pico theres a extra step.
 
+for pro micro you will need the joystick.h file but for pico you wont
+
 for pro micro you should already have the joystick library installed.
 now you just copy paste the code for pro micro into ide and upload to guitar.
 
