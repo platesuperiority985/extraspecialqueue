@@ -87,13 +87,12 @@ void loop() {
         prevbuttonstate[i + 5] = buttonstate[i + 5];
       }
     }
-
-    int w = analogRead(28);
-    gamepad.SetRz(w);
-    gamepad.send_update();
-
     time2 = newTime;
   }
+
+  int w = analogRead(28);
+  gamepad.SetRz(w);
+  gamepad.send_update();
 
   if (queuecount >= 99) {
     rear = - 1;
