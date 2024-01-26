@@ -88,14 +88,13 @@ void loop() {
         prevbuttonstate[i + 5] = buttonstate[i + 5];
       }
     }
-
-    int w = analogRead(A0);
-    w = map(w, 1023, 0, 1023, 0);
-    Joystick.setRxAxis(w);
-
     time = newTime;
   }
 
+  int w = analogRead(A0);
+  w = map(w, 1023, 0, 1023, 0);
+  Joystick.setRxAxis(w);
+  
   if (queuecount >= 99) {
     rear = - 1;
     front = - 1;
