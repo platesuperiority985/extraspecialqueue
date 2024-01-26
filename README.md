@@ -23,6 +23,7 @@ theres some things we need to change in the code
 toward the top you will see 
 
 const int buttoncount = 9; // amount of pins in use
+
 const unsigned int buttonpins[] = {2, 3, 4, 5, 6, 8, 9, 10, 16}; // pins being used (first 5 MUST be GRYBO)
 
 these need to be changed for your guitar so figure out what pins you have buttons soldered to and add them in here.
