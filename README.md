@@ -27,14 +27,14 @@ const int buttoncount = 9; // amount of pins in use
 const unsigned int buttonpins[] = {2, 3, 4, 5, 6, 8, 9, 10, 16}; // pins being used (first 5 MUST be GRYBO)
 
 these need to be changed for your guitar so figure out what pins you have buttons soldered to and add them in here.
-first 5 MUST be GRYBO so lets say my guitars frets were pins 4, 5, 6, 3, 2 and my strum up/down were 6, 8 and start select 9, 10
+first 5 MUST be GRYBO so lets say my guitars frets were pins 4, 5, 1, 3, 2 and my strum up/down were 6, 8 and start select 9, 10
 i would put 
 
-const unsigned int buttonpins[] = {4, 5, 6, 3, 2, 6, 8, 9, 10}
+const unsigned int buttonpins[] = {4, 5, 1, 3, 2, 6, 8, 9, 10}
 
 understand? i hope so. if you have less like for example you dont care for start select or sum idk then you can remove them by just not adding those pins in like this 
 
-const unsigned int buttonpins[] = {4, 5, 6, 3, 2, 6, 8};
+const unsigned int buttonpins[] = {4, 5, 1, 3, 2, 6, 8};
 
 you will also need to change the the other variable too so since we removed 2 pins we only have 7
 
