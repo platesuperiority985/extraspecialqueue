@@ -49,7 +49,8 @@ int w = analogRead(A0);
 what you would change here is the A0 and you just change it to the pin you have whammy on.
 
 another thing to note is the hz setting by default its 1000 in the code. 
-if you are on pro micro you will be stuck at 1000 but if you are on pi pico you could run higher (typically u want it around ur fps)
+if you are on pro micro you will be stuck at 1000 but if you are on pi pico you could run higher
+i dont recommend higher than games fps and also pico max is 2000 but i dont suggest running full 2000 either
 
 
 depending on the board it will be different so if you use pro micro this is easy and for pico theres a extra step.
