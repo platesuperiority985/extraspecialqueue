@@ -14,6 +14,8 @@ now that weve got that we need to download the arduino ide software so we can up
 
 im going to skip the part where you plug the guitar in and choose it in ide cause its self explanatory.
 
+if you used guitar configurator prior you will need to go back on it and restore your board back to normal
+
 alright so now that we have ide setup and the guitar its time to grab the code. 
 
 theres some things we need to change in the code 
