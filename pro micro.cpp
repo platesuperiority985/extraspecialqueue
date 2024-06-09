@@ -1,6 +1,6 @@
 /*
 
-if you see "//" this is a area you can change things for your liking/controller setup
+if you see "// insert comment here" this is a area you can change things for your liking/controller setup
 
 */
 
