@@ -1,11 +1,17 @@
+/*
+
+if you see "// insert comment here" this is a area you can change things for your liking/controller setup
+
+*/
+
 #include <PicoGamepad.h>
 PicoGamepad gamepad;
 
 const int buttoncount = 9; // amount of pins in use
 const unsigned int buttonpins[] = {22, 13, 12, 11, 10, 15, 17, 2, 1}; // pins being used (first 5 MUST be GRYBO)
 
-unsigned int buttonstate[] = {0, 0, 0, 0, 0, 0, 0, 0, 0};
-unsigned int prevbuttonstate[] = {0, 0, 0, 0, 0, 0, 0, 0, 0};
+unsigned int buttonstate[] = {0, 0, 0, 0, 0, 0, 0, 0, 0}; // if you added or removed the amount of pins add/remove the correct amount of 0s
+unsigned int prevbuttonstate[] = {0, 0, 0, 0, 0, 0, 0, 0, 0}; // if you added or removed the amount of pins add/remove the correct amount of 0s
 
 const int hz = 1000; // setting for dequeue poll rate (hz)
 const int debounce = 24; // setting for debounce (ms)
