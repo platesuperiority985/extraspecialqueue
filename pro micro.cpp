@@ -7,7 +7,10 @@ const unsigned int buttonpins[] = {2, 3, 4, 5, 6, 8, 9, 10, 16}; // pins being u
 unsigned int buttonstate[] = {0, 0, 0, 0, 0, 0, 0, 0, 0};
 unsigned int prevbuttonstate[] = {0, 0, 0, 0, 0, 0, 0, 0, 0};
 
-const int hz = 1000; // setting for dequeue poll rate
+const int hz = 1000; // setting for dequeue poll rate (hz)
+const int debounce = 24; // setting for debounce (ms)
+
+unsigned long pollrate = 1.0 / hz * 1000000.0;
 
 int queueinput[100];
 int queueactutate[100];
@@ -65,7 +68,6 @@ void loop() {
     }
   }
   
-  int pollrate = 1.0 / hz * 1000000.0;
   unsigned long newTime = micros();
   if (newTime - time >= pollrate) {
     if (queuecount) {
@@ -94,7 +96,7 @@ void loop() {
     Joystick.setRxAxis(w);
     
     time = newTime;
-  }
+  } else delayMicroseconds(debounce);
   
   if (queuecount >= 99) {
     rear = - 1;
