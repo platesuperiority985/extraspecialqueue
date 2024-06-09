@@ -7,10 +7,13 @@ const unsigned int buttonpins[] = {22, 13, 12, 11, 10, 15, 17, 2, 1}; // pins be
 unsigned int buttonstate[] = {0, 0, 0, 0, 0, 0, 0, 0, 0};
 unsigned int prevbuttonstate[] = {0, 0, 0, 0, 0, 0, 0, 0, 0};
 
-const int hz = 1000; // setting for dequeue poll rate
+const int hz = 1000; // setting for dequeue poll rate (hz)
+const int debounce = 24; // setting for debounce (ms)
 
-int queueinput[100];
-int queueactutate[100];
+unsigned long pollrate = 1.0 / hz * 1000000.0;
+
+int queueinput[200];
+int queueactutate[200];
 int front = -1; 
 int rear = -1;
 int queuecount = 0;
@@ -25,7 +28,7 @@ void setup() {
 }
 
 void addqueue(int item1, int item2) {
-  if (rear == 100 - 1) {
+  if (rear == 200 - 1) {
   }
   else {
     if (front == -1)
@@ -49,7 +52,7 @@ void dequeue() {
 }
 
 void loop() {
-  if (queuecount < 100) {
+  if (queuecount < 200) {
     for (int i = 0; i < 5; i++) {
       buttonstate[i] = digitalRead(buttonpins[i]);
       if (buttonstate[i] != prevbuttonstate[i]) {
@@ -63,8 +66,7 @@ void loop() {
       }
     }
   }
-
-  int pollrate = 1.0 / hz * 1000000.0;
+  
   unsigned long newTime = micros();
   if (newTime - time2 >= pollrate) {
     if (queuecount) {
@@ -93,9 +95,9 @@ void loop() {
     gamepad.send_update();
     
     time2 = newTime;
-  }
+  } else delayMicroseconds(debounce);
 
-  if (queuecount >= 99) {
+  if (queuecount >= 199) {
     rear = - 1;
     front = - 1;
     queuecount = 0;
